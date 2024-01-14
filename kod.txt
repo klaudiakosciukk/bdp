@@ -1,0 +1,24 @@
+$uri = "https://api.mapbox.com/uploads/v1/klaudiakosciuk/credentials?access_token=sk.eyJ1Ijoia2xhdWRpYWtvc2NpdWsiLCJhIjoiY2xyNHlzaTRsMDFnajJrcDR0cHRtZjdsMiJ9.fb0suKLQruPCcOebpUGfrQ"
+Invoke-RestMethod -Uri $uri -Method Post
+
+
+$env:AWS_ACCESS_KEY_ID ="ASIATNLVGLR2FHT56TLS"
+$env:AWS_SECRET_ACCESS_KEY = "AITuQAQa9hqTFVifNE2UPUq3UEkNJ7VwT1BZlu50"
+$env:AWS_SESSION_TOKEN = "FwoGZXIvYXdzEFQaDF6DM9vL0h3WsrB2hSKiAgbfhq7dlvGNb8F5tIqAe4snmvh56+3KTYrohSaYN1Xes2M+9dnY7jeBeWjHmTyLBhCixFx9S2dxuP5/kAMCmfREsQxnMatWGUCnD/3CGfrtlB+Wli+eZ5fAB02wcci83U6y7j5JUvcfFFMiPkw1xYkfLFSdT7dyHiUimez5CW4mXCpGmcagrl5y1BR8U/jfu04iVk/AW1AU2LT/f2/QqFBlKwZKmoGhh7dGS0vNCbhSOWrNpvEfz+5Uc0HSeBLHNXn6mnQIvF7NTQ4ceScf7eWNHlXGksimenPPdX1BWCB+OZmIqS+U5wsvtEhC0MyHYfLJeYydkX19LsBb43G9PpZZVvpCARTqU1FAGSXwl5RwrBs4zJj7QAFr/NydiEVkkeNgKKSM8awGMinTg9ZidYnRGVI++swGbbCVfOEZPdl4jQdljjIBt8l9oC4pmj31PuGG7A=="
+
+aws s3 cp T2019_KAR_POI_TABLE.zip s3://tilestream-tilesets-production/62/_pending/7uvn39tnyno1xm2bvntea5rlc/klaudiakosciuk --region eu-north-1 
+
+$url = "https://api.mapbox.com/uploads/v1/klaudiakosciuk?access_token=sk.eyJ1Ijoia2xhdWRpYWtvc2NpdWsiLCJhIjoiY2xyNHlzaTRsMDFnajJrcDR0cHRtZjdsMiJ9.fb0suKLQruPCcOebpUGfrQ"
+
+$headers = @{
+    "Content-Type" = "application/json"
+    "Cache-Control" = "no-cache"
+}
+
+$body = @{
+    url = "http://tilestream-tilesets-production.s3.amazonaws.com/62/_pending/7uvn39tnyno1xm2bvntea5rlc/klaudiakosciuk"
+    tileset = "klaudiakosciuk.karpoi"
+    name = "karpoi"
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri $url -Method Post -Headers $headers -Body $body
