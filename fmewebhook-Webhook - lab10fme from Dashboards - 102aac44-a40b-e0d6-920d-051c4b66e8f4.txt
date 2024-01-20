@@ -1,0 +1,26 @@
+Name:
+Webhook - lab10fme from Dashboards - 102aac44-a40b-e0d6-920d-051c4b66e8f4
+
+Token:
+5b61f3952b460177130937395d128c663fabf47d
+
+Description:
+Allow users to run Dashboards/lab10fme without logging in
+
+Created Date:
+2024-01-20T17:27:46.472Z
+
+Expiration Date:
+2025-01-19T23:00:00.000Z
+
+Enabled:
+true
+
+Authorization with Header:
+http://DESKTOP-0D7F5LT/fmedatadownload/Dashboards/lab10fme.fmw?API=&e-mail_klienta=kkosciukk%40gmail.com&powiat=%C5%9Awinouj%C5%9Bcie&cloud_coverage=50&date_start=20230701&date_finish=20230730&DestDataset_TIFF=D%3A%5Cbdp%5Clab10&SourceDataset_SHAPEFILE=D%3A%5Cbdp%5Clab10%5Cpowiaty.shp&e-mail_sender=kkosciukk%40gmail.com&opt_showresult=false&opt_servicemode=sync
+Header Key: Authorization
+Header Value: fmetoken token=5b61f3952b460177130937395d128c663fabf47d
+
+Authorization with Query String:
+http://DESKTOP-0D7F5LT/fmedatadownload/Dashboards/lab10fme.fmw?API=&e-mail_klienta=kkosciukk%40gmail.com&powiat=%C5%9Awinouj%C5%9Bcie&cloud_coverage=50&date_start=20230701&date_finish=20230730&DestDataset_TIFF=D%3A%5Cbdp%5Clab10&SourceDataset_SHAPEFILE=D%3A%5Cbdp%5Clab10%5Cpowiaty.shp&e-mail_sender=kkosciukk%40gmail.com&opt_showresult=false&opt_servicemode=sync&token=5b61f3952b460177130937395d128c663fabf47d
+
